@@ -21,6 +21,7 @@ public:
     static double inverseExponentialDistribution(double exponentialDistributionValue, double lambda) {
         return -log(exponentialDistributionValue) / lambda;
     }
+    static double distributionDencity(double x, double lambda){ return lambda * exp (- lambda * x);}
 };
 
 class VX {
@@ -112,13 +113,14 @@ public:
         res.push_back((double)INFINITY);
         return res;
     }
+
     vector<double> histogram(VX vx) {
         vector<double> h;
         h.push_back(vx.getNumberOfMS(0, v.front()));
         for (size_t i = 0, j = 1; j < v.size(); i++, j++) {
             h.push_back(vx.getNumberOfMS(v[i], v[j]));
         }
-        h.push_back(vx.getNumberOfMS(v.back(), (double)INFINITY));
+        h.push_back(vx.getNumberOfMS(v.back(), vx.getVs().back()));
     }
 private:
     vector<double> v;
