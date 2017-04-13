@@ -27,3 +27,16 @@
 *.exe
 *.out
 *.app
+
+# Other
+*.sdf
+*.opensdf
+*.vcxprojResolveAssemblyReference.cache
+*.pdb
+*.ilk
+*.exe
+*.log
+*.tlog
+*.idb
+*.VC.VC.opendb
+*.VC.*
