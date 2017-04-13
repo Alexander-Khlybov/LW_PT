@@ -120,7 +120,7 @@ public:
         for (size_t i = 0, j = 1; j < v.size(); i++, j++) {
             h.push_back(vx.getNumberOfMS(v[i], v[j]));
         }
-        h.push_back(vx.getNumberOfMS(v.back(), vx.getVs().back()));
+        h.push_back(vx.getNumberOfMS(v.back(), vx.getVs().back() + 0.000001));
     }
 private:
     vector<double> v;
